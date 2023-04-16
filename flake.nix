@@ -1,6 +1,6 @@
 # flake and cmake file adapted from https://github.com/outfoxxed/hyprland-plugin-nix
 {
-  description = "Hyprland plugin for touch gestures";
+  description = "Hyprland window bar plugin";
 
   inputs = {
     hyprland.url = "github:horriblename/Hyprland/nix-pluginenv";
