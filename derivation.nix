@@ -37,6 +37,10 @@
 
   HYPRLAND_HEADERS = hyprland-headers;
 
+  patches = [
+    ./cmake.patch
+  ];
+
   outputs = [ "out" ];
 
   nativeBuildInputs = [ pkg-config cmake ];
