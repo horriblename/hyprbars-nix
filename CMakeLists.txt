@@ -17,20 +17,21 @@ ENDIF()
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(DEPS REQUIRED pixman-1 libdrm)
 
-include_directories(
-	"include/"
-)
+# include_directories(
+# 	"include/"
+# )
 
-add_library(hy3 SHARED
+add_library(hyprbars SHARED
 	# files here
-	"src/main.cpp"
+	"main.cpp"
+	"barDeco.cpp"
 )
 
-target_include_directories(hy3 PRIVATE
+target_include_directories(hyprbars PRIVATE
 	${DEPS_INCLUDE_DIRS}
 	$ENV{HYPRLAND_HEADERS}
 )
 
-install(TARGETS hy3
+install(TARGETS hyprbars
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
