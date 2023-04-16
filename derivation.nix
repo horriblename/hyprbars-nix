@@ -1,5 +1,6 @@
 { lib
 , stdenv
+, fetchFromGitHub
 , cmake
 , hyprland-headers
 , pkg-config
@@ -24,7 +25,15 @@
 }: stdenv.mkDerivation {
   pname = "hyprland-hyprbars";
   inherit version;
-  src = ./.;
+  src = fetchFromGitHub {
+    owner = "hyprwm";
+    repo = "hyprland-plugins";
+    sparseCheckout = [
+      "hyprbars"
+    ];
+    rev = "bb1437add2df7f76147f7beb430365637fc2c35e";
+    sha256 = "sha256-4j4B+ZMyTYY7cJJ1yjMRel0Z/zJXlL3r1ID9MeStU4o=";
+  };
 
   HYPRLAND_HEADERS = hyprland-headers;
 
