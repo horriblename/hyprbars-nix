@@ -9,7 +9,7 @@ index 0000000..c4504de
 +add_subdirectory("hyprbars/")
 diff --git a/hyprbars/CMakeLists.txt b/hyprbars/CMakeLists.txt
 new file mode 100644
-index 0000000..212fc98
+index 0000000..50c6f6b
 --- /dev/null
 +++ b/hyprbars/CMakeLists.txt
 @@ -0,0 +1,31 @@
@@ -25,7 +25,7 @@ index 0000000..212fc98
 +endif()
 +
 +find_package(PkgConfig REQUIRED)
-+pkg_check_modules(DEPS REQUIRED hyprland pixman-1 libdrm)
++pkg_check_modules(DEPS REQUIRED pixman-1 libdrm)
 +
 +# include_directories(
 +# 	"include/"
