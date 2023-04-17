@@ -17,7 +17,7 @@
       {
         packages.default = pkgs.callPackage ./derivation.nix {
           stdenv = pkgs.gcc12Stdenv;
-          hyprland-headers = hyprpkgs.hyprland-pluginenv;
+          hyprland = hyprpkgs.hyprland;
           wlroots = hyprpkgs.wlroots-hyprland;
         };
 
