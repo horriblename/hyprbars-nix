@@ -9,7 +9,7 @@ index 0000000..c4504de
 +add_subdirectory("hyprbars/")
 diff --git a/hyprbars/CMakeLists.txt b/hyprbars/CMakeLists.txt
 new file mode 100644
-index 0000000..98afeed
+index 0000000..0df7675
 --- /dev/null
 +++ b/hyprbars/CMakeLists.txt
 @@ -0,0 +1,36 @@
@@ -24,12 +24,12 @@ index 0000000..98afeed
 +      ${CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES})
 +endif()
 +
-+IF(NOT DEFINED ENV{HYPRLAND_HEADERS})
-+ message(FATAL_ERROR "$HYPRLAND_HEADERS is unset")
-+ENDIF()
++# IF(NOT DEFINED ENV{HYPRLAND_HEADERS})
++#  message(FATAL_ERROR "$HYPRLAND_HEADERS is unset")
++# ENDIF()
 +
 +find_package(PkgConfig REQUIRED)
-+pkg_check_modules(DEPS REQUIRED pixman-1 libdrm)
++pkg_check_modules(DEPS REQUIRED hyprland pixman-1 libdrm)
 +
 +# include_directories(
 +# 	"include/"
@@ -43,7 +43,7 @@ index 0000000..98afeed
 +
 +target_include_directories(hyprbars PRIVATE
 +	${DEPS_INCLUDE_DIRS}
-+	$ENV{HYPRLAND_HEADERS}
++	# $ENV{HYPRLAND_HEADERS}
 +)
 +
 +install(TARGETS hyprbars
