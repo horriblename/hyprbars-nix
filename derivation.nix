@@ -35,8 +35,6 @@
     sha256 = "sha256-4j4B+ZMyTYY7cJJ1yjMRel0Z/zJXlL3r1ID9MeStU4o=";
   };
 
-  # HYPRLAND_HEADERS = "${hyprland.dev}/include";
-
   patches = [
     ./cmake.patch
   ];

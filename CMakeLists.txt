@@ -10,10 +10,6 @@ if(CMAKE_EXPORT_COMPILE_COMMANDS)
       ${CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES})
 endif()
 
-# IF(NOT DEFINED ENV{HYPRLAND_HEADERS})
-#  message(FATAL_ERROR "$HYPRLAND_HEADERS is unset")
-# ENDIF()
-
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(DEPS REQUIRED hyprland pixman-1 libdrm)
 
@@ -29,7 +25,6 @@ add_library(hyprbars SHARED
 
 target_include_directories(hyprbars PRIVATE
 	${DEPS_INCLUDE_DIRS}
-	# $ENV{HYPRLAND_HEADERS}
 )
 
 install(TARGETS hyprbars
